@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { IconMail, IconSend, IconPhone, IconMapPin, IconCircleCheck } from '@tabler/icons-react';
 
+// Logo Image (Apne assets folder ke path ke mutabiq adjust kar sakte hain)
+import logoImg from '../assets/logo.png';
+
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
@@ -24,7 +27,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 
                 {/* Newsletter / Get Updates Section */}
-                <div className="bg-gradient-to-r from-[#0a387d] to-[#05204d] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div className="bg-gradient-to-r from-[#0a387d] to-[#05204d] rounded-3xl p-6 sm:p-8 md:p-12 border border-white/10 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div className="max-w-xl text-center lg:text-left">
                         <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#EC7727]/20 text-[#EC7727] uppercase tracking-wider mb-3">
                             Stay Updated
@@ -37,7 +40,7 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div className="w-full lg:w-auto min-w-[320px]">
+                    <div className="w-full lg:w-auto lg:min-w-[320px]">
                         {subscribed ? (
                             <div className="bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 px-6 py-4 rounded-2xl flex items-center justify-center gap-3 text-sm font-bold">
                                 <IconCircleCheck size={20} />
@@ -71,11 +74,20 @@ const Footer = () => {
                 {/* Main Footer Links Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
                     
-                    {/* Brand Col */}
+                    {/* Brand Col with Logo */}
                     <div className="lg:col-span-4 space-y-4">
-                        <h2 className="text-2xl font-black tracking-tight text-white">
-                            SR <span className="text-[#EC7727]">Public</span>
-                        </h2>
+                        <div className="flex items-center gap-3">
+                            {logoImg ? (
+                                <img 
+                                    src={logoImg} 
+                                    alt="SR Public Logo" 
+                                    className="w-12 h-12 md:w-14 md:h-14 object-contain rounded-xl bg-white/10 p-1.5 border border-white/15"
+                                />
+                            ) : null}
+                            <h2 className="text-2xl font-black tracking-tight text-white">
+                                SR <span className="text-[#EC7727]">Public</span>
+                            </h2>
+                        </div>
                         <p className="text-gray-300 text-sm leading-relaxed font-normal">
                             The premier educational hub in Karachi encompassing schools, colleges, academies, and professional technical institutes under the visionary leadership of Mr. Rizwan Ahmed.
                         </p>
@@ -89,11 +101,12 @@ const Footer = () => {
                     <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-sm font-extrabold uppercase tracking-widest text-[#EC7727]">Quick Links</h4>
                         <ul className="space-y-2.5 text-sm text-gray-300 font-medium">
-                            <li><a href="#hero" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#ceo" className="hover:text-white transition-colors">Mastermind</a></li>
-                            <li><a href="#boards" className="hover:text-white transition-colors">Board Affiliations</a></li>
-                            <li><a href="#programs" className="hover:text-white transition-colors">Programs & Courses</a></li>
-                            <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
+                            <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
+                            <li><a href="/pages/founder" className="hover:text-white transition-colors">Mastermind</a></li>
+                            <li><a href="/affiliatedboards" className="hover:text-white transition-colors">Board Affiliations</a></li>
+                            <li><a href="/programs" className="hover:text-white transition-colors">Programs & Courses</a></li>
+                            <li><a href="/pages/gallery" className="hover:text-white transition-colors">Gallery</a></li>
+                            <li><a href="/pages/contactform" className="hover:text-white transition-colors">Contact Us</a></li>
                         </ul>
                     </div>
 

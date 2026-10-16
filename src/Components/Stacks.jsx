@@ -19,7 +19,7 @@ const Stats = () => {
         const timer = setInterval(() => {
             currentStep++;
             setStudentsCount(Math.min(1000, Math.floor((1000 / steps) * currentStep)));
-            setTeachersCount(Math.min(12, Math.floor((12 / steps) * currentStep)));
+            setTeachersCount(Math.min(12, Math.floor((50 / steps) * currentStep)));
             setCampusesCount(Math.min(3, Math.floor((3 / steps) * currentStep)));
 
             if (currentStep >= steps) {
@@ -35,7 +35,7 @@ const Stats = () => {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center divide-y md:divide-y-0 md:divide-x divide-gray-200/60">
                 
                 {/* Stat 1: Students */}
-                <div className="flex items-center justify-center gap-5 p-4 group">
+                <div className="flex items-center justify-center gap-4 lg:gap-5 p-4 group">
                     <div className="w-14 h-14 rounded-2xl bg-orange-50 text-[#EC7727] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110">
                         <IconUsers size={28} stroke={1.8} />
                     </div>
@@ -50,7 +50,7 @@ const Stats = () => {
                 </div>
 
                 {/* Stat 2: Teachers */}
-                <div className="flex items-center justify-center gap-5 p-4 pt-6 md:pt-4 group">
+                <div className="flex items-center justify-center gap-4 lg:gap-5 p-4 pt-6 md:pt-4 group">
                     <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#062B66] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110">
                         <IconSchool size={28} stroke={1.8} />
                     </div>
@@ -65,7 +65,7 @@ const Stats = () => {
                 </div>
 
                 {/* Stat 3: Campuses */}
-                <div className="flex items-center justify-center gap-5 p-4 pt-6 md:pt-4 group">
+                <div className="flex items-center justify-center gap-4 lg:gap-5 p-4 pt-6 md:pt-4 group">
                     <div className="w-14 h-14 rounded-2xl bg-blue-50 text-[#062B66] flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110">
                         <IconBuilding size={28} stroke={1.8} />
                     </div>
